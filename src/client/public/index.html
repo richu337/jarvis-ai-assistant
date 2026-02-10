@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="arc-reactor"></div>
+                <h1>J.A.R.V.I.S.</h1>
+            </div>
+            <div class="status">
+                <span class="status-indicator" id="statusIndicator"></span>
+                <span id="statusText">Initializing...</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Display -->
+            <div class="chat-container" id="chatContainer">
+                <div class="welcome-message">
+                    <h2>Good day, Sir.</h2>
+                    <p>JARVIS at your service. How may I assist you today?</p>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <button class="voice-btn" id="voiceBtn" title="Voice Input">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </button>
+                    <input 
+                        type="text" 
+                        id="commandInput" 
+                        placeholder="Type a command or click the microphone..."
+                        autocomplete="off"
+                    />
+                    <button class="send-btn" id="sendBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <div class="voice-indicator" id="voiceIndicator">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <span>Listening...</span>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="action-btn" data-command="search who is Mohanlal">
+                    <span>🔍</span> Search
+                </button>
+                <button class="action-btn" data-command="check my emails">
+                    <span>📧</span> Emails
+                </button>
+                <button class="action-btn" data-command="play music">
+                    <span>🎵</span> Music
+                </button>
+                <button class="action-btn" data-command="show expense tracker">
+                    <span>💰</span> Expenses
+                </button>
+                <button class="action-btn" data-command="open chrome">
+                    <span>🌐</span> Browser
+                </button>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>System Status</h3>
+            <div class="system-info">
+                <div class="info-item">
+                    <span class="label">Connection:</span>
+                    <span class="value" id="connectionStatus">Connecting...</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Commands:</span>
+                    <span class="value" id="commandCount">0</span>
+                </div>
+            </div>
+
+            <h3>Recent Commands</h3>
+            <div class="command-history" id="commandHistory">
+                <p class="empty-state">No commands yet</p>
+            </div>
+
+            <h3>Capabilities</h3>
+            <ul class="capabilities">
+                <li>🔍 Web Search</li>
+                <li>📧 Email Management</li>
+                <li>🎵 Spotify Control</li>
+                <li>🖥️ System Control</li>
+                <li>🌐 Website Scraping</li>
+                <li>🗣️ Voice Commands</li>
+            </ul>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
